@@ -1,0 +1,1 @@
+module.exports = require('@melishev/prettier-config');

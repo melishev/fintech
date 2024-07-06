@@ -1,0 +1,28 @@
+{
+  "name": "fintech",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.11.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@melishev/eslint-config": "^0.1.0",
+    "@melishev/prettier-config": "^0.1.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.17.6",
+    "vite": "^5.3.1",
+    "vite-plugin-mkcert": "^1.17.5",
+    "vue-tsc": "^2.0.21"
+  }
+}
