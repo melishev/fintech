@@ -3,6 +3,8 @@ import Demo from '../demo.vue'
 </script>
 
 <template>
+  <div>1</div>
+
   <div class="h-screen border-x bg-neutral-100 p-3 shadow-sm">
     <Demo />
   </div>

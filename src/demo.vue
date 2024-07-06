@@ -55,7 +55,7 @@ onMounted(() => {
 })
 
 function filterAmount(amount: number, currency: string) {
-  return new Intl.NumberFormat('en-DE', { style: 'currency', currency, currencyDisplay: 'symbol' }).format(amount)
+  return new Intl.NumberFormat(undefined, { style: 'currency', currency, currencyDisplay: 'symbol' }).format(amount)
 }
 
 const data = [
@@ -81,14 +81,14 @@ const data = [
 <template>
   <div class="rounded-md border bg-neutral-200/20 p-2">
     <p class="text-[10px] font-medium text-neutral-500">Transactions Explorer</p>
-    <span class="font-bold text-neutral-950">200,47 €</span>
+    <span class="font-bold tabular-nums text-neutral-950">200,47 €</span>
 
     <div id="chart" class="h-[200px] w-full" />
 
     <div class="grid grid-cols-2 gap-y-1">
       <div v-for="d in data" :key="d.label" class="flex flex-col">
         <p class="text-[10px] font-medium text-neutral-500">{{ d.label }}</p>
-        <span class="text-xs font-semibold text-neutral-950">{{ filterAmount(d.amount, 'EUR') }}</span>
+        <span class="text-xs font-semibold tabular-nums text-neutral-950">{{ filterAmount(d.amount, 'EUR') }}</span>
       </div>
     </div>
   </div>
