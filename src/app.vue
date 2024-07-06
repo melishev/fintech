@@ -2,7 +2,6 @@
 import { useDBAssetStore } from './db/asset/store'
 import { useDBCurrencyStore } from './db/currency/store'
 import { useDBSettingsStore } from './db/settings/store'
-import Exporter from './exporter.vue'
 
 const dbAssetStore = useDBAssetStore()
 const { assets, assets2 } = storeToRefs(dbAssetStore)
@@ -15,28 +14,28 @@ const { settings } = storeToRefs(dbSettingsStore)
 </script>
 
 <template>
-  <p>Total amount</p>
-  <!-- {{ totalAmount }} -->
+  <div>
+    <RouterLink to="/">Transactions</RouterLink>
+    <RouterLink to="/assets">Assets</RouterLink>
+    <RouterLink to="/analytics">Analytics</RouterLink>
+  </div>
 
-  <br />
-  <br />
-
-  <p>Assets</p>
-  <ul>
-    <li v-for="asset in assets2" :key="asset.id">
-      {{ asset.name }} - {{ asset.amount }} {{ asset.currency }} - {{ asset.amountInPrimaryCurrency }}
-      {{ settings.primaryCurrency }}
-    </li>
-  </ul>
-
-  <br />
-  <br />
-
-  <Exporter />
+  <RouterView />
 </template>
 
 <style lang="css">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply antialiased;
+  /* background: hsl(0, 0%, 16%); */
+  background: hsl(0, 0%, 95%);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 400px 400px 1fr;
+}
 </style>

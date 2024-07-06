@@ -8,17 +8,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antv/g2": "^5.2.0",
     "@vueuse/core": "^10.11.0",
+    "lucide-vue-next": "^0.400.0",
     "pinia": "^2.1.7",
-    "vue": "^3.4.29"
+    "radix-vue": "^1.9.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@melishev/eslint-config": "^0.1.0",
     "@melishev/prettier-config": "^0.1.0",
+    "@types/node": "^20.14.10",
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "postcss": "^8.4.39",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.6",
     "vite": "^5.3.1",
