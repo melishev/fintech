@@ -17,10 +17,11 @@ export const useAssetsStore = defineStore('assets', () => {
   const assets = computed(() => {
     if (!assetsRaw.value) return []
 
+    const primaryCurrency = settings.value.get('primaryCurrency')
+
     return assetsRaw.value.map((asset) => ({
       ...asset,
-      amountInPrimaryCurrency:
-        asset.amount * currencies.value.get(asset.currency + '_' + settings.value.get('primaryCurrency')).rate,
+      amountInPrimaryCurrency: asset.amount * currencies.value.get(asset.currency + '_' + primaryCurrency).rate,
     }))
   })
 

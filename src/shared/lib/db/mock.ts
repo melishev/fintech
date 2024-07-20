@@ -60,26 +60,31 @@ export async function initMockData(db: FinTechDexie) {
   try {
     await db.assets.bulkAdd([
       {
+        id: 1,
         name: 'Cash',
         currency: 'EUR',
         amount: 1000,
       },
       {
+        id: 2,
         name: 'Cash',
         amount: 200000,
         currency: 'RUB',
       },
       {
+        id: 3,
         name: 'Cash',
         amount: 200,
         currency: 'USD',
       },
       {
+        id: 4,
         name: 'Cash',
         amount: 26,
         currency: 'GEL',
       },
       {
+        id: 5,
         name: 'Cash',
         amount: 52,
         currency: 'BAM',

@@ -1,4 +1,4 @@
-import type { ICurrency } from './schema'
+import type { ICurrency } from './types'
 import { from, useObservable } from '@vueuse/rxjs'
 import { liveQuery } from 'dexie'
 import { db } from '@/shared/lib/db'
