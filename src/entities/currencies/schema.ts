@@ -1,4 +1,4 @@
-export interface ICurrencySchema {
+export interface ICurrency {
   id: string
   base: string
   quote: string
