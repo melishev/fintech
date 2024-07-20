@@ -12,7 +12,11 @@ import {
 } from '@/shared/ui'
 import { Settings } from 'lucide-vue-next'
 import PrimaryCurrency from './primaryCurrency.vue'
-// import Currency from './currency.vue'
+import Currency from './currency.vue'
+import { useCurrenciesStore } from '../../store'
+
+const storeCurrencies = useCurrenciesStore()
+const { currencies, primaryExchangeRate } = storeToRefs(storeCurrencies)
 </script>
 
 <template>
@@ -34,16 +38,15 @@ import PrimaryCurrency from './primaryCurrency.vue'
       <div class="space-y-4">
         <PrimaryCurrency />
 
-        <!-- <div class="rounded-sm bg-neutral-100 p-2 px-3">
+        <div class="rounded-sm bg-neutral-100 p-2 px-3">
           <p class="text-sm font-medium text-neutral-900">My Currencies</p>
           <ul>
-            <li v-for="currency in currencies" :key="currency.code" class="py-2">
+            <li v-for="[key, currency] of currencies" :key="key" class="flex items-center justify-between py-2">
               <Currency :code="currency.code" :name="currency.name" />
-
-              <p></p>
+              <p class="text-sm font-semibold tabular-nums text-neutral-950">{{ primaryExchangeRate?.rates[key] }}</p>
             </li>
           </ul>
-        </div> -->
+        </div>
       </div>
     </DialogContent>
   </Dialog>

@@ -1,17 +1,21 @@
 export interface IAssetSchema {
   id: number
   name: string
-  currency: 'EUR' | 'RUB' | 'USD' | 'GEL' | 'BAM'
+  currency: string
   amount: number
 }
 
 export interface ICurrencySchema {
-  id: string
-  base: string
-  quote: string
-  type: string
-  rate: number
-  timestamp: number
+  code: string
+  name: string
+  type: 'fiat' | 'crypto'
+}
+
+export interface IExchangeRateSchema {
+  code: string
+  rates: {
+    [i: string]: number
+  }
 }
 
 interface SettingFSFileHandler {

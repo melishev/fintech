@@ -6,8 +6,9 @@ const db = new Dexie('fintechdb') as FinTechDexie
 
 db.version(1).stores({
   assets: '++id',
-  currencies: '++id, &base',
-  settings: '++id, &key',
+  currencies: '&code',
+  exchangeRates: '&code',
+  settings: '&key',
 })
 
 initMockData(db)
