@@ -24,6 +24,4 @@ interface SettingPrimaryCurrency {
   value: string
 }
 
-export type ISettingSchema = {
-  id: string
-} & (SettingFSFileHandler | SettingPrimaryCurrency)
+export type ISettingSchema = SettingFSFileHandler | SettingPrimaryCurrency
